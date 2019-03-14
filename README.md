@@ -1,6 +1,6 @@
 # MKR.PyTorch
 
-This repository is the PyTorch implementation of MKR ([arXiv](https://arxiv.org/abs/1901.08907)).
+This repository is  PyTorch implementation of MKR ([arXiv](https://arxiv.org/abs/1901.08907)).
 
 The code is heavily based on the original [TensorFlow version](https://github.com/hwwang55/MKR).
 
