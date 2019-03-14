@@ -200,7 +200,6 @@ class MKR(object):
                     and (('rs' in name) or ('cc_unit' in name) or ('user' in name)) \
                     and ('weight' in name):
                 l2_loss_rs = l2_loss_rs + self.l2_loss(param)
-        print("base_rs: {}, l2_rs: {}".format(base_loss_rs, l2_loss_rs * self.args.l2_weight))
         loss_rs = base_loss_rs + l2_loss_rs * self.args.l2_weight
         return loss_rs, base_loss_rs, l2_loss_rs
 
