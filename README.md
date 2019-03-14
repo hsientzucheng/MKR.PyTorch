@@ -1,4 +1,4 @@
-# MKR
+# MKR.PyTorch
 
 This repository is the PyTorch implementation of MKR ([arXiv](https://arxiv.org/abs/1901.08907)).
 
