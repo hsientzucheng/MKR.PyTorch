@@ -140,13 +140,10 @@ class MKR(object):
         self.sigmoid = nn.Sigmoid()
 
     def _build_ops(self):
-        # Note: Weight decay == L2 regularization / 2
         self.optimizer_rs = torch.optim.Adam(self.MKR_model.parameters(),
                                              lr=self.args.lr_rs)
-                                             # weight_decay=self.args.l2_weight*2)
         self.optimizer_kge = torch.optim.Adam(self.MKR_model.parameters(),
                                               lr=self.args.lr_kge)
-                                              # weight_decay=self.args.l2_weight*2)
 
     def _inference_rs(self, inputs):
         # Inputs
@@ -224,7 +221,6 @@ class MKR(object):
         user_embeddings, item_embeddings, scores, _, labels= self._inference_rs(inputs)
         loss_rs, base_loss_rs, l2_loss_rs = self.loss_rs(user_embeddings, item_embeddings, scores, labels)
 
-        # self.optimizer_kge.zero_grad()
         self.optimizer_rs.zero_grad()
         loss_rs.backward()
         if show_grad:
@@ -246,7 +242,6 @@ class MKR(object):
         loss_kge, base_loss_kge, l2_loss_kge = self.loss_kge(scores_kge, head_embeddings, tail_embeddings)
 
         self.optimizer_kge.zero_grad()
-        self.optimizer_rs.zero_grad()
         loss_kge.sum().backward()
         if show_grad:
             plot_grad_flow(self.MKR_model.named_parameters(),
