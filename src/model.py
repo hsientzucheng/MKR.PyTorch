@@ -147,7 +147,7 @@ class MKR(object):
 
     def _inference_rs(self, inputs):
         # Inputs
-        self.user_indices = inputs[:, 1].long().to(self.device,
+        self.user_indices = inputs[:, 0].long().to(self.device,
                 non_blocking=True)
         self.item_indices = inputs[:, 1].long().to(self.device,
                 non_blocking=True)
