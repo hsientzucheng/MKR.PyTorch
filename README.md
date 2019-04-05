@@ -20,9 +20,9 @@ python src/preprocess.py --dataset book     # for Book-Crossing dataset
 python src/preprocess.py --dataset music    # for Last.FM dataset  
 ```
 Train and evaluate
-- In src/main.py
-- Uncomment the code blocks of settings for specific dataset
-- Comment the others you don't need
+- In src/main.py:
+  - Uncomment the code blocks of settings for specific dataset
+  - Comment the others you don't need
 ```
 $ python src/main.py
 ```
