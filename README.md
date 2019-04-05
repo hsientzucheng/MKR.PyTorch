@@ -13,16 +13,16 @@ Tested under
 - scikit-learn, tqdm, numpy, matplotlib, tensorboardX
 
 ### Running the code
-- Preprocess
+Preprocess
 ```
 python src/preprocess.py --dataset movie    # for MovieLens-1M dataset
 python src/preprocess.py --dataset book     # for Book-Crossing dataset    
 python src/preprocess.py --dataset music    # for Last.FM dataset  
 ```
-- Train and evaluate
+Train and evaluate
 - In src/main.py
--- Uncomment the code blocks of settings for specific dataset
--- Comment the others you don't need
+- Uncomment the code blocks of settings for specific dataset
+- Comment the others you don't need
 ```
 $ python src/main.py
 ```
